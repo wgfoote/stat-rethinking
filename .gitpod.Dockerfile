@@ -13,3 +13,5 @@ ENV PATH="/home/rstudio/.cmdstanr:${PATH}"
 RUN R -e "cmdstanr::install_cmdstan(dir = '/home/rstudio/.cmdstanr', cores = 4)"
 
 # install lib dependencies
+
+EXPOSE 8787
