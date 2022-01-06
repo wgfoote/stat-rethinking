@@ -2,7 +2,8 @@ ARG BASE_CONTAINER=rocker/verse:4.0.4
 FROM $BASE_CONTAINER
 
 # fix permissions
-RUN chown rstudio-server:rstudio-server /var/lib/rstudio-server/
+# RUN chown rstudio-server:rstudio-server /var/lib/rstudio-server/
+RUN chown gitpod:gitpod /var/lib/rstudio-server/
 
 # install r packages
 RUN R -e "install.packages('tidyverse', repos = 'http://cran.us.r-project.org')"
