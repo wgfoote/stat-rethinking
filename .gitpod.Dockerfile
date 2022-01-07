@@ -17,6 +17,9 @@ RUN mkdir -p /home/rstudio/.cmdstanr
 ENV PATH="/home/rstudio/.cmdstanr:${PATH}"
 RUN R -e "cmdstanr::install_cmdstan(dir = '/home/rstudio/.cmdstanr', cores = 4)"
 
+# rstudio setup
+COPY database.conf /etc/rstudio/database.conf
+
 # install lib dependencies
 
 EXPOSE 8787
