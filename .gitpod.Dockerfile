@@ -3,7 +3,8 @@ FROM $BASE_CONTAINER
 
 # fix permissions
 # RUN chown rstudio-server:rstudio-server /var/lib/rstudio-server/
-RUN chown gitpod:gitpod /var/lib/rstudio-server/
+# RUN chown gitpod:gitpod /var/lib/rstudio-server/
+RUN chmod -R g=u /var/lib/rstudio-server
 
 # install r packages
 RUN R -e "install.packages('tidyverse', repos = 'http://cran.us.r-project.org')"
