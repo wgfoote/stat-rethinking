@@ -4,7 +4,7 @@ tasks:
   - name: rstudio
     before: |
       echo R_LIBS_USER=$GITPOD_REPO_ROOT/../.R/library > /home/gitpod/.Renviron
-      cp .Rprofile /home/gitpod/  
+      cp .gitpod/.Rprofile /home/gitpod/  
     command: /usr/lib/rstudio-server/bin/rstudio-server start
 ports:
   - port: 8787
